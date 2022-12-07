@@ -4,6 +4,9 @@ page loading times, by disabling selected plugin programmatically, and only allo
 
 This is **not a regular plugin**, but a WPMU plugin, which means, that it can not be installed via the plugin menu.
 
+This tool was originally created for [ajaxsearchpro.com](https://ajaxsearchpro.com).
+For more WordPress PagesPeed optimizations check [this article](https://ajaxsearchpro.com/blog/wordpress-pagespeed-optimization-the-easy-way/).
+
 ## Installation
 
 Copy the `wpmu-selective-plugin-loader` folder to the `/wp-content/mu-plugins/` directory. If the `mu-plugins` directory does not exist,
@@ -56,7 +59,7 @@ new SelectivePluginLoader(
 		'woocommerce' => 'woocommerce/woocommerce.php',				// WooCommerce
 	),
 	array(
-		'events' => array('/events/', '/another-events-page/'),
+		'events' => array('/events/', '/event/'),
 		'woocommerce' => array('/shop/', '/product/'),
 	)
 );
