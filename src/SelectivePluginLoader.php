@@ -30,7 +30,8 @@ class SelectivePluginLoader {
 	function handle( $plugins ) {
 		foreach ( $this->allow_on_pages as $pkey => $pages ) {
 			foreach ( $pages as $page ) {
-				if ( strpos( $this->request_uri, $page ) !== false ) {
+				if ( preg_match( '#' . $page . '#', $this->request_uri )
+                                  || strpos( $this->request_uri, $page ) !== false ) {
 					unset($this->disable_plugins[$pkey]);
 				}
 			}
