@@ -30,8 +30,8 @@ in your favourite editor (or even notepad) and let's get to it.
 After the line `//  ONLY EDIT BELOW:` you will find the init class and it accepts two array parameters:
   1. Plugins to disable by default
   2. List of URLs where specific plugins should be enabled.
-    * **IMPORTANT** Parts of URL are also matched!
-    * Use regex expressions for extra control [PHP preg-match docs](https://www.php.net/manual/en/function.preg-match.php)
+     1. **IMPORTANT** Parts of URL are also matched!
+     2. Use regex expressions for extra control [PHP preg-match docs](https://www.php.net/manual/en/function.preg-match.php)
 
 ### Example 1
 You want to disable WooCommerce everywhere, except for the shop page and the product pages.
@@ -68,7 +68,7 @@ new SelectivePluginLoader(
 ```
 
 ### Example 3
-Use regex to allow the ajax-search-lite plugin on the home page and the search page, but not on any of the blog posts.
+Use regex to allow the **Ajax Search Lite** plugin on the Wordpress home page and the `/search` page, but not on any of the blog posts.
 
 ```PHP
 //  ONLY EDIT BELOW:
@@ -83,7 +83,7 @@ new SelectivePluginLoader(
 ```
 
 ### Example 4
-Use regex to only allow the monarch social sharing plugin on the blog posts only.
+Use regex to only allow the **Monarch social sharing** plugin on blog posts only (not on the home page).
 
 ```PHP
 //  ONLY EDIT BELOW:
@@ -99,7 +99,7 @@ new SelectivePluginLoader(
 ```
 
 ### Example 5
-Use regex to only allow the context-related-posts plugin on the blog posts but not specific pages with URLs like '/search' and '/faq'
+Use regex to only allow the **Context related posts** plugin on blog posts but not specific pages with URLs like `/search` and `/faq`
 
 ```PHP
 new SelectivePluginLoader(
