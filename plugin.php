@@ -11,6 +11,7 @@ require_once "src/SelectivePluginLoader.php";
 new SelectivePluginLoader(
 	/**
 	 * Step 1.
+         *
 	 * This is the list of plugins you want to disable by default, and on step 2. the exceptions are configured.
 	 *
 	 * As you can see, each line represents one plugin "label" => "plugin_dir/plugin_file.php" format.
@@ -18,8 +19,8 @@ new SelectivePluginLoader(
 	 */
 	array(
 		'events' => 'the-events-calendar/the-events-calendar.php',	// The Events Calendar
-		'woocommerce' => 'woocommerce/woocommerce.php',				// WooCommerce
-		'elementor' => 'elementor/elementor.php',					// Elementor
+		'woocommerce' => 'woocommerce/woocommerce.php',			// WooCommerce
+		'elementor' => 'elementor/elementor.php',			// Elementor
 		'elementor-pro' => 'elementor-pro/elementor-pro.php',		// Elementor Pro
 	),
 
@@ -27,8 +28,10 @@ new SelectivePluginLoader(
 	 * Step 2.
 	 *
 	 * Now, use the simplified labels to allow plugins on specified URLs. Use each label only once,
-	 * you can define as many URLs (even partially) as you need for each plugin label.
-	 * Format: 'plugin_label' => array('/page-url/', '/another-page-url/' ...)
+	 * you can define as many URLs (or partial URLs) as you need for each plugin label. Use regex to 
+         * make more complex matches.
+         *
+	 * Format: 'plugin_label' => array('/page-url/', '/another-page-url/', '/blog/[^/]+/?$', ...)
 	 *
 	 * WARNING: Partial matches also count! If the URL CONTAINS the string, then it matches, and the plugin
 	 * 			will be loaded. So "/product/" will also apply for "/product/my-product-1" and "/product/my-product-1"...
